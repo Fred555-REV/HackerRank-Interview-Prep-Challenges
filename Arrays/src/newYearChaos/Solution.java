@@ -30,13 +30,22 @@ class Result {
                 isChaotic = true;
                 break;
             }
+//            if (q.get(i) != i + 1) {
 
-            if (q.get(i) == i + 3) {
-                minJumps += 2;
-            } else if (q.get(i) == i + 2 || i + 1 < q.size() && q.get(i) > q.get(i + 1)) {
-                minJumps++;
-            }
+                System.out.printf("Index: %s\tNumber: %s\t", i, q.get(i));
+                if (i + 1 < q.size()) {
+                    System.out.printf("Number After: %s", q.get(i + 1));
+                }
+                System.out.println();
+                if (q.get(i) == i + 3) {
+                    minJumps += 2;
+                } else if (q.get(i) == i + 2 || i + 1 < q.size() && q.get(i) > q.get(i + 1)) {
+                    minJumps++;
+                }
+//NUMBER IM ON TESTING
+// 1,2,4,5
 
+//            }
         }
         if (isChaotic) {
             System.out.println("Too chaotic");
@@ -109,6 +118,16 @@ boolean isChaotic = false;
 Too chaotic
 Too chaotic
 64 This needs to be 65
+Too chaotic
+Too chaotic
+Too chaotic
+Too chaotic
+Too chaotic
+67
+66
+Too chaotic
+Too chaotic
+65
 Too chaotic
 Too chaotic
 Too chaotic
