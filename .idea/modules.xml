@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/Greedy-Algorithms/Greedy-Algorithms.iml" filepath="$PROJECT_DIR$/Greedy-Algorithms/Greedy-Algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Interview-Prep-Challenges.iml" filepath="$PROJECT_DIR$/.idea/Interview-Prep-Challenges.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sorting/Sorting.iml" filepath="$PROJECT_DIR$/Sorting/Sorting.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warm-Up/Warm-Up.iml" filepath="$PROJECT_DIR$/Warm-Up/Warm-Up.iml" />
     </modules>
   </component>
