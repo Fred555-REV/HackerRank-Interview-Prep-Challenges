@@ -30,8 +30,7 @@ class Result {
         for (int i = 0; i < n; i++) {
             int color = ar.get(i);
             if (pairs.containsKey(color)) {
-                int count = pairs.get(color);
-                pairs.put(color, ++count);
+                pairs.put(color, 1 + pairs.get(color));
             } else {
                 pairs.put(color, 1);
             }
