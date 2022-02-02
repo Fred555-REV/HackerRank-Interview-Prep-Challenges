@@ -68,25 +68,17 @@ class Result {
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
-        int t = Integer.parseInt(bufferedReader.readLine().trim());
+        Scanner scan = new Scanner(System.in);
+        int t = Integer.parseInt(scan.nextLine().trim());
 
         IntStream.range(0, t).forEach(tItr -> {
-            try {
-                String s = bufferedReader.readLine();
+                String s = scan.nextLine();
 
                 String result = Result.isBalanced(s);
 
-                bufferedWriter.write(result);
-                bufferedWriter.newLine();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
+                System.out.println(result);
         });
 
-        bufferedReader.close();
-        bufferedWriter.close();
+        scan.close();
     }
 }
