@@ -1,10 +1,9 @@
-package simpletexteditor;
 
 import java.io.*;
 import java.util.*;
 
 public class Solution {
-    public static String output = "";
+    public static StringBuilder output = new StringBuilder();
     public static Stack<String> stack = new Stack<>();
 
     public static void main(String[] args) {
@@ -27,45 +26,31 @@ public class Solution {
             int length = output.length();
             switch (arg.charAt(0)) {
                 case '1':
-                    output = output.concat(arg.substring(2));
+                    output.append(arg.substring(2));
                     stack.add("1 " + arg.substring(2).length());
                     break;
                 case '2':
-                    int substringLength = Integer.parseInt(arg.substring(2));
-                    stack.add("2 " + output.substring(length-substringLength));
-                    output = output.substring(0,length-substringLength);
+                    int subStringLength = length - Integer.parseInt(arg.substring(2));
+                    String deletedString = output.substring(subStringLength, length);
+                    stack.add("2 " + deletedString);
+                    output.delete(subStringLength, length);
                     break;
                 case '3':
                     System.out.println(output.charAt(Integer.parseInt(arg.substring(2)) - 1));
                     break;
                 case '4':
-//                    System.out.println(stack);
                     String undoOp = stack.pop();
                     if (undoOp.charAt(0) == '1') {
-                        output = output.substring(0,length-Integer.parseInt(undoOp.substring(2)));
+                        output.delete(output.length() - Integer.parseInt(undoOp.substring(2)), output.length());
                     } else {
-                       output = output.concat(undoOp.substring(2));
+                        output.append(undoOp.substring(2));
                     }
                     break;
             }
 //            System.out.println(i);
-//            System.out.println(output);
+//            System.out.println(output.toString());
         }
         scan.close();
     }
 
 }
-
-/* FIRST ATTEMPT
-TEST CASE
-8
-1 abc
-3 3
-2 3
-1 xy
-3 2
-4
-4
-3 1
-
- */
