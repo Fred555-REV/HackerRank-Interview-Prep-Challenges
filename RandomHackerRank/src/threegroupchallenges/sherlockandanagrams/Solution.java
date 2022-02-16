@@ -47,10 +47,28 @@ kkkk
                 freqMap.put(letter, 1 + freqMap.get(letter));
             }
         }
+        int pairs = 0;
         for (int i = 0; i < s.length(); i++) {
+            String letter = String.valueOf(s.charAt(i));
+            int freq = freqMap.get(letter);
+            if (i + 1 < s.length() && freq > 1) {
+                freqMap.put(letter, freq - 1);
+                pairs++;
+                // abcbapoia
+                String substring = s.substring(i, s.indexOf(letter, i));
+                String substring2 = s.substring(i+1,s.indexOf(letter,i));
+                Arrays.sort(substring.toCharArray());
+                Arrays.sort(substring2.toCharArray());
+                if(substring.equals(substring2)){
+                    pairs++;
+                }
+                //TODO prob makethis into a loop to check non-symmetrical anagrams
+                // ifai iafi not checked, cdcd as well
+                //
+            }
 
         }
-        return 0;
+        return pairs;
     }
 
 }
